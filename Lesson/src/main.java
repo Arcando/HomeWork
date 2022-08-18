@@ -22,7 +22,7 @@ public class main {
 //        human.SortByAge(listOfHuman);
 //        System.out.println(listOfHuman);
 
-        
+
 
 
     }
@@ -65,7 +65,7 @@ class Human{
 
 
 
-    public void SortByFullName(List<Human> list){
+    public void SortByFullName(List list){
 
     }
 
