@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
+import java.util.*;
 
 
 public class main {
@@ -20,6 +18,12 @@ public class main {
         listOfHuman.add(new Human("Саирова Анна Сергеевна", 42, new Address("Москва", "1-й Хвостов переулок", 11, 1)));
         listOfHuman.add(new Human("Петров Петр Петрович", 21, new Address("Москва", "Сергея Макеева", 7, 21)));
 
+        Human human = new Human();
+//        human.SortByAge(listOfHuman);
+//        System.out.println(listOfHuman);
+
+        
+
 
     }
 }
@@ -35,6 +39,9 @@ class Human{
         this.address = address;
     }
 
+    public Human() {
+    }
+
     @Override
     public String toString() {
         return "Human{" +
@@ -44,8 +51,38 @@ class Human{
                 '}';
     }
 
-    public
+    public String getFullName() {
+        return fullName;
+    }
 
+    public int getAge() {
+        return age;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+
+
+    public void SortByFullName(List<Human> list){
+
+    }
+
+    public void SortByAge(List<Human> list){
+        Collections.sort(list, new Comparator<Human>() {
+            @Override
+            public int compare(Human o1, Human o2) {
+                if (o1.getAge() > o2.getAge()){
+                    return 1;
+                }else if(o1.getAge() < o2.getAge()){
+                    return -1;
+                }else{
+                    return 0;
+                }
+            }
+        });
+    }
 }
 
 class Address{
