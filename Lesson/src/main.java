@@ -31,6 +31,7 @@ public class main {
 
 
 
+
     }
 }
 
@@ -76,21 +77,22 @@ class Human{
     }
     public static <E> List<E> getDuplicatesWithIteration(List<E> a) {
         Set<E> duplicates = new HashSet<>();
-        for (int i = 0; i < a.size(); i++) {
-            E e1 = a.get(i);
-            if (e1 == null) continue; // игнорируем null
-            // сравниваем каждый элемент со всеми остальными
-            for (int j = 0; j < a.size(); j++) {
-                if (i == j) continue; // не проверяем элемент с собой же
-                E e2 = a.get(j);
-                if (e1.equals(e2)) {
-                    // дубликат найден, сохраним его
-                    duplicates.add(e2);
-                }
-            }
+        Iterator iterator = duplicates.iterator();
+        int n = 15;
+        int index1 = 0;
+        while (iterator.hasNext()) {
+            index1 = duplicates.hashCode()&(n-1);
         }
-        return new ArrayList<>(duplicates);
+           while (iterator.hasNext()){
+               int index2 = 0;
+               index2 = duplicates.hashCode()&(n-1);
+               if (index1 == index2){
+                   duplicates.add();
+               }
+           }
     }
+
+
 
     public void SortByAge(List<Human> list){//сортировка по Возрасту
         Collections.sort(list, new Comparator<Human>() {
