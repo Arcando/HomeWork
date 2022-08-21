@@ -28,8 +28,10 @@ public class main {
 //        human.SortByFullName(listOfHuman);
 //        System.out.println(listOfHuman);
 //
-        human.SortByAddress(listOfHuman);
-        System.out.println(listOfHuman);
+//        human.SortByAddress(listOfHuman);
+//        System.out.println(listOfHuman);
+
+        human.FindDuplicate(listOfHuman);
 
 
 
@@ -113,6 +115,23 @@ class Human{
                 return o1.address.getStreet().compareTo(o2.address.getStreet());
             }
         });
+    }
+
+
+    public void FindDuplicate(List<Human> list){
+        //множество с дубликатами
+        final Set<Human> duplicates = new HashSet<>();
+        //множество для отслеживания повторений
+        final Set<Human> tracking = new HashSet<>();
+
+        //пробегаемся по всем элементам
+        for(Human lists : list){
+            //если не получилось добавить, то элемент уже встречался
+            if(!tracking.add((Human) list)){
+                //добавляем элемент в множество дубликатов
+                duplicates.add((Human) list);
+            }
+        }
     }
 
 }

@@ -1,4 +1,11 @@
-public class User {
+public class UserTest {
+    public static void main(String[] args) {
+        User user = new User("Иванов Иван Иванович", new Role());
+        user.InfoAboutUser(user);
+
+    }
+}
+class User {
     private String fullName;
     private Role role;
 
