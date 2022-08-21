@@ -2,7 +2,9 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-
+/**
+ * Это класс мэйн, в нем будут создаваться экземпляры классов и вызываться методы
+ */
 public class main {
     public static void main(String[] args) {
 
@@ -46,9 +48,21 @@ public class main {
     }
 }
 
+/**
+ * Это класс Human в нем будет описываться человек
+ */
 class Human{
+    /**
+     * В этом поле будет храниться ФИО пользователя
+     */
     private String fullName;
+    /**
+     * В этом поле будет храниться возраст
+     */
     private int age;
+    /**
+     * в этом поле будет храниться объект класса Address(Фактический, полный адрес проживания)
+     */
     private Address address;
 
     public Human(String fullName, int age, Address address) {
@@ -82,7 +96,10 @@ class Human{
     }
 
 
-
+    /**
+     * Данный метод будет сортировать пользователей по их возрасту в порядке убывания(входным параметром будет объект класса Human)
+     * @param list
+     */
     public void SortByAge(List<Human> list){//сортировка по Возрасту
         Collections.sort(list, new Comparator<Human>() {
             @Override
@@ -98,6 +115,10 @@ class Human{
         });
     }
 
+    /**
+     * Данный метод будет сортировать пользователей по их ФИО в лексикографическом порядке(входным параметром будет объект класса Human)
+     * @param list
+     */
     public void SortByFullName(List<Human> list){///сортировка по ФИО
         Collections.sort(list, new Comparator<Human>() {
             @Override
@@ -108,6 +129,10 @@ class Human{
 
     }
 
+    /**
+     * Данный метод сортирует пользователей по их адресу проживания в лексикографическом порядке(входным параметром будет объект класса Human)
+     * @param list
+     */
     public void SortByAddress(List<Human> list){////Сортировка по адресу
         Collections.sort(list, new Comparator<Human>() {
             @Override
@@ -117,7 +142,10 @@ class Human{
         });
     }
 
-
+    /**
+     * Данный метод ищет дубликаты в коллекции через множества(Входным параметром будет список типа Human)
+     * @param list
+     */
     public void FindDuplicate(List<Human> list){
         //множество с дубликатами
         final Set<Human> duplicates = new HashSet<>();
@@ -136,10 +164,25 @@ class Human{
 
 }
 
+/**
+ * Данный класс описывает фактический адрес проживания пользователя
+ */
 class Address{
+    /**
+     * в данном поле будет храниться название города, в котором проживает пользователь
+     */
     private String town;
+    /**
+     * в данном поле будет храниться полное название улицы, на которой проживает пользователь
+     */
     private String street;
+    /**
+     * в данном поле будет храниться номер дома, в котором проживает пользователь
+     */
     private int house;
+    /**
+     * в данном поле будет храниться номер квартиры, в которой проживает пользователь
+     */
     private int flat;
 
     public Address(String town, String street, int house, int flat) {
