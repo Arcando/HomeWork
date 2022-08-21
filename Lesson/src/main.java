@@ -1,4 +1,5 @@
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 
@@ -24,7 +25,15 @@ public class main {
 //        human.SortByFullName(listOfHuman);
 //        System.out.println(listOfHuman);
 
-        Human.getDuplicatesWithIteration(listOfHuman);
+//        human.SortByFullName(listOfHuman);
+//        System.out.println(listOfHuman);
+//
+        human.SortByAddress(listOfHuman);
+        System.out.println(listOfHuman);
+
+
+
+
 
 
 
@@ -58,7 +67,7 @@ class Human{
                 '}';
     }
 
-    public String getFullName() {
+    public  String getFullName() {
         return fullName;
     }
 
@@ -68,28 +77,6 @@ class Human{
 
     public Address getAddress() {
         return address;
-    }
-
-
-    public void SortByFullName(List<Human> list){
-
-
-    }
-    public static <E> List<E> getDuplicatesWithIteration(List<E> a) {
-        Set<E> duplicates = new HashSet<>();
-        Iterator iterator = duplicates.iterator();
-        int n = 15;
-        int index1 = 0;
-        while (iterator.hasNext()) {
-            index1 = duplicates.hashCode()&(n-1);
-        }
-           while (iterator.hasNext()){
-               int index2 = 0;
-               index2 = duplicates.hashCode()&(n-1);
-               if (index1 == index2){
-                   duplicates.add();
-               }
-           }
     }
 
 
@@ -108,6 +95,26 @@ class Human{
             }
         });
     }
+
+    public void SortByFullName(List<Human> list){///сортировка по ФИО
+        Collections.sort(list, new Comparator<Human>() {
+            @Override
+            public int compare(Human o1, Human o2) {
+                return o1.fullName.compareTo(o2.fullName);
+            }
+        });
+
+    }
+
+    public void SortByAddress(List<Human> list){////Сортировка по адресу
+        Collections.sort(list, new Comparator<Human>() {
+            @Override
+            public int compare(Human o1, Human o2) {
+                return o1.address.getStreet().compareTo(o2.address.getStreet());
+            }
+        });
+    }
+
 }
 
 class Address{
@@ -122,6 +129,7 @@ class Address{
         this.house = house;
         this.flat = flat;
     }
+
 
     public String getTown() {
         return town;

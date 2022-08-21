@@ -1,13 +1,15 @@
 public class User {
     private String fullName;
-    Post post;
+    private Role role;
 
-    public User(String fullName, Post post) {
+    public User(String fullName, Role role) {
         this.fullName = fullName;
-        this.post = post;
+        this.role = role;
     }
 
-    public void userInfo(User user){
-
+    public void InfoAboutUser(User user){
+        System.out.println("Приветствуем "+fullName+ user.role);
     }
+
 }
+

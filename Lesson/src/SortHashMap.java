@@ -24,7 +24,7 @@ public class SortHashMap {
 
 
     }
-    public static void printMap(Map<Integer, String> map) {
+    public static void printMap(Map<Integer, String> map) {///сортирует по значению
         for (Map.Entry<Integer, String> entry : map.entrySet()) {
             System.out.println("Key : " + entry.getKey()
                     + " Value : " + entry.getValue());
