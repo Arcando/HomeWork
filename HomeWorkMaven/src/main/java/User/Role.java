@@ -1,8 +1,14 @@
 package User;
 
+import lombok.Getter;
+import lombok.Setter;
+
+
 /**
  * Описание роли пользователя
  */
+@Getter
+@Setter
 public class Role {
     private String role;
     private String aboutRole;
@@ -12,11 +18,8 @@ public class Role {
         this.aboutRole = aboutRole;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public String getAboutRole() {
-        return aboutRole;
+    @Override
+    public String toString() {
+        return "Роль: "+role + "\n" + "Описание: " + aboutRole;
     }
 }

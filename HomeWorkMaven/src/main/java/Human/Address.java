@@ -1,5 +1,17 @@
 package Human;
-public class Address {
+
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+/**
+ * Описание полного, фактического адреса места проживания
+ */
+@Getter
+@Setter
+@ToString(of = {"city", "street", "house", "flat"})
+public class Address{
     /**
      * в данном поле будет храниться название города, в котором проживает пользователь
      */
@@ -24,27 +36,5 @@ public class Address {
         this.flat = flat;
     }
 
-    public String getTown() {
-        return city;
-    }
-    public String getStreet() {
-        return street;
-    }
-    public int getHouse() {
-        return house;
-    }
-    public int getFlat() {
-        return flat;
-    }
-
-    @Override
-    public String toString() {
-        return "Human.Address{" +
-                "town='" + city + '\'' +
-                ", street='" + street + '\'' +
-                ", house=" + house +
-                ", flat=" + flat +
-                '}';
-    }
 }
 
