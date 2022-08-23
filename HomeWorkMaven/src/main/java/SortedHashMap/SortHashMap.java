@@ -1,18 +1,17 @@
-package SortHashMap;
+package SortedHashMap;
 import java.util.*;
-
 /**
  * Сортировка HashMap
  */
 public class SortHashMap {
     public static void main(String[] args) {
-    Map<Integer, String> map = new HashMap<>();
-    map.put(14,"Anna");
-    map.put(71, "John");
-    map.put(1,"Andrew");
-    map.put(17,"Pall");
-    map.put(104, "Bob");
-    map.put(29, "Mary");
+        Map<Integer, String> map = new HashMap<>();
+        map.put(14,"Anna");
+        map.put(71, "John");
+        map.put(1,"Andrew");
+        map.put(17,"Pall");
+        map.put(104, "Bob");
+        map.put(29, "Mary");
 
         /**
          * Здесь описывается сортировка HashMap по ключу с использованием TreeMap(в данном случае будет только сортировка по ключу)
@@ -33,9 +32,4 @@ public class SortHashMap {
                     + " Value : " + entry.getValue());}
     }
 }
-
-
-
-
-
 
