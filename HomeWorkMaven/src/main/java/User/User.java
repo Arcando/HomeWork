@@ -1,31 +1,21 @@
 package User;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 /**
  * Описание пользователя программы
  */
-@Getter
-@Setter
+@AllArgsConstructor
+@Data
 public class User {
     /**
      * данное поле будет хранить информацию о ФИО юзера
      */
     private String fullName;
+
     /**
      * данном поле будет объект типа User.Role
      */
     private Role role;
-
-    public User(String fullName, Role role) {
-        this.fullName = fullName;
-        this.role = role;
-    }
-
-    /**
-     * данный метод принимает в качестве параметра объект класса User и выводит информацию о нём
-     * @param
-     */
-
 }

@@ -1,38 +1,29 @@
 package Human;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+/**
+ * Описание человека
+ */
+@AllArgsConstructor
+@Data
+public class Human {
+    /**
+     * В этом поле будет храниться ФИО пользователя
+     */
+    private String fullName;
 
     /**
-     * Описание человека
+     * В этом поле будет храниться возраст
      */
-    @Getter
-    @Setter
-    @ToString(of = {"fullName", "age", "address"})
-    public class Human {
+    private int age;
 
-        /**
-         * В этом поле будет храниться ФИО пользователя
-         */
-        private String fullName;
+    /**
+     * в этом поле будет храниться объект класса Human(Фактический, полный адрес проживания)
+     */
+    private Address address;
 
-        /**
-         * В этом поле будет храниться возраст
-         */
-        private int age;
-
-        /**
-         * в этом поле будет храниться объект класса Human(Фактический, полный адрес проживания)
-         */
-        private Address address;
-
-        public Human(String fullName, int age, Address address) {
-            this.fullName = fullName;
-            this.age = age;
-            this.address = address;
-        }
-
-        public String getFullAddress() {
+    public String getFullAddress() {
             return address.toString();
         }
     }
